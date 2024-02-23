@@ -1,14 +1,14 @@
 import { Schema, Types, model, models } from "mongoose";
 
-export interface Image extends Document {
+export interface ImageTypes extends Document {
   title: string;
   transformationType: string;
   publicId: string;
-  secureUrl: string;
+  secureURL: string;
   width?: number;
   height?: number;
   config?: Record<string, any>;
-  transformationUrl?: URL;
+  transformationUrl?: String;
   aspectRatio?: string;
   color?: string;
   prompt?: string;
@@ -21,15 +21,15 @@ export interface Image extends Document {
   updatedAt: Date;
 }
 
-const ImageSchema = new Schema<Image>({
+const ImageSchema = new Schema<ImageTypes>({
   title: { type: String, required: true },
   transformationType: { type: String, required: true },
   publicId: { type: String, required: true },
-  secureUrl: { type: String, required: true },
+  secureURL: { type: String, required: true },
   width: { type: Number },
   height: { type: Number },
   config: { type: Object },
-  transformationUrl: { type: URL },
+  transformationUrl: { type: String },
   aspectRatio: { type: String },
   color: { type: String },
   prompt: { type: String },
