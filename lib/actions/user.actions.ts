@@ -21,6 +21,7 @@ export async function createUser(user: CreateUserParams) {
 
 // READ
 export async function getUserById(userId: string) {
+  console.log("userId========", userId);
   try {
     await connectToDatabase();
 
@@ -93,7 +94,6 @@ export async function deleteUser(clerkId: string) {
 // }
 
 export async function updateCredits(userId: string, creditFee: number) {
-  console.log("=========", userId, creditFee);
   try {
     await connectToDatabase();
 
